@@ -47,7 +47,7 @@ services:
     image: minio/minio
     container_name: minio
     volumes:
-      - ./include/data:/data
+      - minio_data:/data
     ports:
       - 9000:9000
       - 9001:9001
@@ -62,3 +62,6 @@ services:
       - ./.env
     networks:
       - ${DOCKER_NETWORK_NAME:-airflow}
+
+volumes: 
+  minio_data: 

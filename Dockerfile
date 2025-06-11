@@ -10,4 +10,8 @@ RUN apt update && \
 
 # Set JAVA_HOME
 ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64/
+
+COPY requirements.txt . 
+RUN pip install -r requirements.txt
+
 RUN export JAVA_HOME
